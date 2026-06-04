@@ -25,7 +25,13 @@ export default function HomePage() {
   const [sending, setSending] = useState(false);
 
   useEffect(() => {
-    apiMe().then(setUser);
+    apiMe().then((me) => {
+      if (!me) {
+        router.replace("/welcome");
+        return;
+      }
+      setUser(me);
+    });
     apiActiveEmergency().then(({ emergency }) => {
       if (emergency?.status === "active") {
         router.replace("/emergency");

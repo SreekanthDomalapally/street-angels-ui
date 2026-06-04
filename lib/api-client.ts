@@ -119,6 +119,7 @@ export async function apiCreateEmergency(): Promise<Emergency> {
 
 export async function apiActiveEmergency(): Promise<ActiveEmergencyResponse> {
   const res = await fetch("/api/emergencies/active");
+  if (res.status === 401) return { emergency: null };
   if (!res.ok) throw new Error("Failed to load emergency");
   return parseJson<ActiveEmergencyResponse>(res);
 }

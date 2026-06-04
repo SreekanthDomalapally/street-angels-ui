@@ -46,7 +46,7 @@ function EmergencyMap() {
   return (
     <div
       className="relative w-full rounded-xl overflow-hidden border border-border"
-      style={{ height: 130, background: "#0f1923" }}
+      style={{ height: 130, background: "hsl(148 42% 9%)" }}
     >
       <svg
         className="absolute inset-0 w-full h-full opacity-[0.13]"
@@ -103,13 +103,15 @@ export default function EmergencyPage() {
   const timersRef = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => {
-    apiActiveEmergency().then(({ emergency: e }) => {
-      if (!e) {
-        router.replace("/home");
-        return;
-      }
-      setEmergency(e);
-    });
+    apiActiveEmergency()
+      .then(({ emergency: e }) => {
+        if (!e) {
+          router.replace("/home");
+          return;
+        }
+        setEmergency(e);
+      })
+      .catch(() => router.replace("/home"));
   }, [router]);
 
   useEffect(() => {
@@ -309,7 +311,7 @@ export default function EmergencyPage() {
                     key={label}
                     className="flex-1 rounded-xl overflow-hidden relative border aspect-[4/3]"
                     style={{
-                      background: dark ? "#050e1a" : "#120508",
+                      background: dark ? "hsl(148 42% 7%)" : "hsl(148 38% 11%)",
                       borderColor: dark
                         ? "hsl(var(--primary) / 0.2)"
                         : "rgba(255,255,255,0.06)",

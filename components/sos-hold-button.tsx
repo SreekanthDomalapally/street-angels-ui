@@ -134,9 +134,9 @@ export function SosHoldButton({ onActivate, disabled }: Props) {
                 : undefined
               : "idleGlow 3.5s ease-in-out infinite",
           background: connecting
-            ? "hsl(350 45% 22%)"
+            ? "hsl(148 40% 18%)"
             : holding
-              ? `hsl(350 ${38 + glow * 12}% ${14 + glow * 8}%)`
+              ? `hsl(148 ${34 + glow * 10}% ${16 + glow * 8}%)`
               : "hsl(var(--card))",
           border: holding || connecting ? "1.5px solid hsl(var(--primary) / 0.35)" : "1.5px solid hsl(var(--card-border))",
           boxShadow: holding
@@ -196,7 +196,7 @@ export function SosSendingOverlay() {
       className="fixed inset-0 z-50 flex flex-col items-center justify-center"
       style={{
         background:
-          "radial-gradient(ellipse at center, hsl(350 30% 8%) 0%, hsl(var(--background)) 100%)",
+          "radial-gradient(ellipse at center, hsl(148 38% 10%) 0%, hsl(var(--background)) 100%)",
       }}
     >
       <div className="flex flex-col items-center gap-6">

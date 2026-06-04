@@ -8,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Street Angels",
-  description: "Emergency safety when walking alone.",
+  title: "YouHoo Alert",
+  description: "When you need it most.",
 };
 
 export default function RootLayout({

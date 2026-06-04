@@ -60,9 +60,9 @@ export default function WelcomePage() {
             <ShieldIcon className="h-8 w-8" />
           </div>
           <div className="space-y-1">
-            <h1 className="text-3xl font-bold tracking-tighter">Street Angels</h1>
+            <h1 className="text-3xl font-bold tracking-tighter">YouHoo Alert</h1>
             <p className="text-muted-foreground text-sm">
-              Emergency safety when walking alone.
+              When you need it most.
             </p>
           </div>
         </div>

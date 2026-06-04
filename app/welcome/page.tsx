@@ -62,7 +62,7 @@ export default function WelcomePage() {
           <div className="space-y-1">
             <h1 className="text-3xl font-bold tracking-tighter">YouHoo Alert</h1>
             <p className="text-muted-foreground text-sm">
-              When you need it most.
+              Assistance when you need it most.
             </p>
           </div>
         </div>

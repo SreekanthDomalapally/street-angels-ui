@@ -9,7 +9,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "YouHoo Alert",
-  description: "When you need it most.",
+  description: "Assistance when you need it most.",
 };
 
 export default function RootLayout({

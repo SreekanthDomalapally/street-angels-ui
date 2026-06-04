@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# YouHoo Alert UI
 
-## Getting Started
+Next.js frontend for YouHoo Alert. Talks to the FastAPI backend at **https://api.youhooalert.com** (or a local `street-angels-api` instance) for auth, contacts, and emergencies.
 
-First, run the development server:
+## Quick start
+
+**Terminal 1 — API** (from `street-angels-api`):
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cd c:/NextSree/street-angels-api
+.\.venv\Scripts\activate
+uvicorn app.main:app --reload --port 8000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Terminal 2 — UI**:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd c:/NextSree/street-angels-ui
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open http://localhost:3000
 
-## Learn More
+## Connect to the API
 
-To learn more about Next.js, take a look at the following resources:
+Create `.env.local`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```env
+# Production
+API_URL=https://api.youhooalert.com
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Or local FastAPI (see street-angels-api)
+# API_URL=http://localhost:8000
+```
+
+Next.js proxies browser requests from `/api/*` to the API server. Session cookies (`sa_session`) stay on the UI origin, so auth works without CORS issues in the browser.
+
+| `API_URL` | Behavior |
+|-----------|----------|
+| `https://api.youhooalert.com` | Production API |
+| `http://localhost:8000` | Local FastAPI + Postgres |
+| Unset | Built-in mock API routes in `app/api/` (in-memory, dev only) |
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Deploy **street-angels-api** as its own Vercel project (connect Neon → `DATABASE_URL`).
+2. Deploy **street-angels-ui** as a separate project.
+3. On the **UI** project → **Environment Variables**:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```env
+   API_URL=https://api.youhooalert.com
+   ```
+
+4. On the **API** (`api.youhooalert.com`) → **Environment Variables**:
+
+   ```env
+   CORS_ORIGINS=https://your-ui-domain,http://localhost:3000
+   DATABASE_URL=<pooled Neon URL>
+   ```
+
+5. Redeploy both projects.
+
+## Pages
+
+| Route | Description |
+|-------|-------------|
+| `/welcome` | Sign in / register / demo |
+| `/home` | SOS hold button |
+| `/emergency` | Active emergency |
+| `/contacts` | Emergency contacts |
+| `/profile` | Profile + logout |

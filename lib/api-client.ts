@@ -8,6 +8,8 @@ import type {
   User,
 } from "./types";
 
+const fetchOpts: RequestInit = { credentials: "include" };
+
 async function parseJson<T>(res: Response): Promise<T> {
   return res.json() as Promise<T>;
 }
@@ -18,6 +20,7 @@ export async function apiRegister(data: {
   password: string;
 }): Promise<User> {
   const res = await fetch("/api/auth/register", {
+    ...fetchOpts,
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -34,6 +37,7 @@ export async function apiLogin(data: {
   password: string;
 }): Promise<User> {
   const res = await fetch("/api/auth/login", {
+    ...fetchOpts,
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -46,11 +50,11 @@ export async function apiLogin(data: {
 }
 
 export async function apiLogout(): Promise<void> {
-  await fetch("/api/auth/logout", { method: "POST" });
+  await fetch("/api/auth/logout", { ...fetchOpts, method: "POST" });
 }
 
 export async function apiMe(): Promise<AuthMeResponse | null> {
-  const res = await fetch("/api/auth/me");
+  const res = await fetch("/api/auth/me", fetchOpts);
   if (res.status === 401) return null;
   if (!res.ok) throw new Error("Failed to load user");
   return parseJson<AuthMeResponse>(res);
@@ -61,6 +65,7 @@ export async function apiUpdateProfile(data: {
   emergencyPhrase: string | null;
 }): Promise<User> {
   const res = await fetch("/api/users/me", {
+    ...fetchOpts,
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -70,7 +75,7 @@ export async function apiUpdateProfile(data: {
 }
 
 export async function apiContacts(): Promise<ContactsResponse> {
-  const res = await fetch("/api/contacts");
+  const res = await fetch("/api/contacts", fetchOpts);
   if (!res.ok) throw new Error("Failed to load contacts");
   return parseJson<ContactsResponse>(res);
 }
@@ -81,6 +86,7 @@ export async function apiAddContact(data: {
   priority: number;
 }): Promise<Contact> {
   const res = await fetch("/api/contacts", {
+    ...fetchOpts,
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -94,6 +100,7 @@ export async function apiUpdateContact(
   data: { priority?: number; name?: string; phone?: string },
 ): Promise<Contact> {
   const res = await fetch(`/api/contacts/${id}`, {
+    ...fetchOpts,
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -103,12 +110,16 @@ export async function apiUpdateContact(
 }
 
 export async function apiDeleteContact(id: string): Promise<void> {
-  const res = await fetch(`/api/contacts/${id}`, { method: "DELETE" });
+  const res = await fetch(`/api/contacts/${id}`, {
+    ...fetchOpts,
+    method: "DELETE",
+  });
   if (!res.ok) throw new Error("Failed to delete contact");
 }
 
 export async function apiCreateEmergency(): Promise<Emergency> {
   const res = await fetch("/api/emergencies", {
+    ...fetchOpts,
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({}),
@@ -118,7 +129,7 @@ export async function apiCreateEmergency(): Promise<Emergency> {
 }
 
 export async function apiActiveEmergency(): Promise<ActiveEmergencyResponse> {
-  const res = await fetch("/api/emergencies/active");
+  const res = await fetch("/api/emergencies/active", fetchOpts);
   if (res.status === 401) return { emergency: null };
   if (!res.ok) throw new Error("Failed to load emergency");
   return parseJson<ActiveEmergencyResponse>(res);
@@ -126,6 +137,7 @@ export async function apiActiveEmergency(): Promise<ActiveEmergencyResponse> {
 
 export async function apiResolveEmergency(id: string): Promise<Emergency> {
   const res = await fetch(`/api/emergencies/${id}`, {
+    ...fetchOpts,
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ status: "resolved" }),

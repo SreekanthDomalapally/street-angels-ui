@@ -1,7 +1,19 @@
 import type { NextConfig } from "next";
 
+const apiUrl = process.env.API_URL?.replace(/\/$/, "");
+
 const nextConfig: NextConfig = {
-  /* config options here */
+  async rewrites() {
+    if (!apiUrl) return [];
+    return {
+      beforeFiles: [
+        {
+          source: "/api/:path*",
+          destination: `${apiUrl}/api/:path*`,
+        },
+      ],
+    };
+  },
 };
 
 export default nextConfig;

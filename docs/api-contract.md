@@ -237,8 +237,14 @@ With role-based access (`admin` / `safeguarding`).
 ## Environment (production UI)
 
 ```env
-# Optional when API is hosted separately
-NEXT_PUBLIC_API_URL=https://api.streetangels.example
+# next.config.ts rewrites /api/* → this host (recommended)
+API_URL=https://api.youhooalert.com
 ```
 
-Or Next.js `rewrites` in `next.config.ts` to proxy `/api/*` to FastAPI.
+Local development:
+
+```env
+API_URL=http://localhost:8000
+```
+
+If `API_URL` is unset, the UI uses in-memory mock routes under `app/api/`.

@@ -26,7 +26,7 @@ export function Header() {
       }`}
     >
       <div className="container mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 md:px-6">
-        <BrandLogo />
+        <BrandLogo large />
 
         <nav className="hidden lg:flex items-center gap-1" aria-label="Main">
           {NAV_LINKS.map((link) => (

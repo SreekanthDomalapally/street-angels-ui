@@ -1,22 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --bg-deep: #071a14;
-  --bg: #0f2e24;
-  --bg-card: #153d32;
-  --bg-card-hover: #1a4d3e;
-  --navy: #0d3529;
-  --navy-light: #1e5c48;
-  --coral: #9ed67a;
-  --coral-soft: #b8f0a0;
-  --coral-glow: rgba(158, 214, 122, 0.45);
+  --bg-deep: #050a14;
+  --bg: #0b132b;
+  --bg-card: #111a2e;
+  --bg-card-hover: #162038;
+  --navy: #0b132b;
+  --navy-light: #1a2744;
+  --coral: #e63946;
+  --coral-soft: #ff5a5f;
+  --coral-glow: rgba(255, 90, 95, 0.45);
   --sos: #e63946;
   --sos-soft: #ff5a5f;
   --sos-glow: rgba(230, 57, 70, 0.45);
-  --white: #d4ecd9;
-  --text: #d4ecd9;
-  --text-muted: #8fc9a8;
-  --border: rgba(212, 236, 217, 0.12);
+  --text: #f4f6fb;
+  --text-muted: #94a3b8;
+  --border: rgba(255, 255, 255, 0.08);
   --radius: 1rem;
 }
 
@@ -43,7 +42,7 @@ html {
 }
 
 body {
-  background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 35%, var(--bg-deep) 100%);
+  background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 40%, var(--bg-deep) 100%);
   color: var(--text);
   font-family: var(--font-sans);
   min-height: 100dvh;

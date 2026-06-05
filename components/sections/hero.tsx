@@ -26,7 +26,7 @@ export function HeroSection() {
       id="home"
       className="relative min-h-[90vh] flex items-center pt-8 pb-20 overflow-hidden"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(158,214,122,0.2),transparent)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(255,90,95,0.18),transparent)] pointer-events-none" />
       <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-coral/10 rounded-full blur-[100px] pointer-events-none" />
       <CitySilhouette />
 

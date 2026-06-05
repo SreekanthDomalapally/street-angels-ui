@@ -43,7 +43,7 @@ export function HeroPhone() {
         className="relative z-10 mx-auto w-[min(100%,280px)]"
       >
         <div className="rounded-[2.75rem] border-[3px] border-foreground/15 bg-navy-light p-2.5 shadow-2xl shadow-black/40">
-          <div className="rounded-[2.25rem] bg-gradient-to-b from-[#1a4d3e] to-[#0a1f18] overflow-hidden">
+          <div className="rounded-[2.25rem] bg-gradient-to-b from-[#141e36] to-[#0a1020] overflow-hidden">
             <div className="flex items-center justify-between px-5 pt-4 pb-2">
               <span className="text-[10px] text-muted">9:41</span>
               <span className="text-[10px] font-semibold text-coral">YouHooAlert</span>
@@ -72,7 +72,7 @@ export function HeroPhone() {
                   </span>
                 </div>
                 <div className="h-20 rounded-lg bg-gradient-to-br from-navy-light/80 to-navy relative overflow-hidden">
-                  <div className="absolute inset-0 opacity-30 bg-[linear-gradient(rgba(212,236,217,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(212,236,217,.06)_1px,transparent_1px)] bg-[size:12px_12px]" />
+                  <div className="absolute inset-0 opacity-30 bg-[linear-gradient(rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.06)_1px,transparent_1px)] bg-[size:12px_12px]" />
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <div className="h-4 w-4 rounded-full bg-sos border-2 border-white shadow-lg" />
                   </div>

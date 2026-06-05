@@ -12,7 +12,7 @@ export function Footer() {
     <footer className="border-t border-foreground/10 bg-bg-deep">
       <div className="container mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
-          <BrandLogo />
+          <BrandLogo compact />
 
           <nav className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-muted" aria-label="Footer">
             <Link href="/privacy" className="hover:text-coral transition-colors">

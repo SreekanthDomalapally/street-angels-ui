@@ -51,7 +51,7 @@ export function HowItWorksSection() {
               transition={{ delay: i * 0.1 }}
               className="relative card-dark p-8 text-center hover:bg-bg-card-hover transition-colors"
             >
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-coral text-bg-deep text-sm font-bold mb-5 ring-4 ring-bg">
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-coral text-white text-sm font-bold mb-5 ring-4 ring-bg">
                 {item.step}
               </span>
               <div className="flex justify-center mb-4">

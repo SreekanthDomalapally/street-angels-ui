@@ -19,7 +19,7 @@ export function DownloadDonateSection() {
           >
             <div className="shrink-0 w-36">
               <div className="rounded-[2rem] border-2 border-foreground/15 p-1.5 bg-navy-light shadow-xl">
-                <div className="rounded-[1.6rem] bg-gradient-to-b from-[#1a4d3e] to-[#0a1f18] aspect-[9/16] flex flex-col items-center justify-center p-4">
+                <div className="rounded-[1.6rem] bg-gradient-to-b from-[#141e36] to-[#0a1020] aspect-[9/16] flex flex-col items-center justify-center p-4">
                   <Image src="/logo.png" alt="" width={40} height={40} className="rounded-lg mb-2" />
                   <div className="h-8 w-8 rounded-full bg-gradient-to-b from-sos-soft to-sos flex items-center justify-center text-[8px] font-bold text-white shadow-md shadow-sos/40">
                     SOS
@@ -39,11 +39,11 @@ export function DownloadDonateSection() {
                 </span>
               </div>
               <div className="mt-6 inline-block rounded-xl border border-dashed border-foreground/20 bg-foreground/5 p-4">
-                <div className="w-24 h-24 bg-coral-soft rounded-md grid grid-cols-5 grid-rows-5 gap-px p-1">
+                <div className="w-24 h-24 bg-white rounded-md grid grid-cols-5 grid-rows-5 gap-px p-1">
                   {Array.from({ length: 25 }).map((_, i) => (
                     <div
                       key={i}
-                      className={`rounded-sm ${i % 4 === 0 ? "bg-navy" : "bg-bg-deep"}`}
+                      className={`rounded-sm ${i % 4 === 0 ? "bg-navy" : "bg-white"}`}
                     />
                   ))}
                 </div>

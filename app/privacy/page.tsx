@@ -8,13 +8,13 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen bg-gray-50 dark:bg-navy pt-24 pb-16">
-      <article className="mx-auto max-w-3xl px-4 sm:px-6 prose prose-navy dark:prose-invert">
-        <Link href="/" className="text-coral text-sm font-medium no-underline hover:underline">
+    <main className="min-h-screen pt-24 pb-16 px-4 sm:px-6">
+      <article className="mx-auto max-w-3xl text-muted leading-relaxed space-y-4">
+        <Link href="/" className="text-coral text-sm font-medium hover:underline">
           ← Back to home
         </Link>
-        <h1 className="text-3xl font-bold mt-6">Privacy Policy</h1>
-        <p className="text-muted">Last updated: {new Date().toLocaleDateString("en-US")}</p>
+        <h1 className="text-3xl font-bold mt-6 text-foreground">Privacy Policy</h1>
+        <p>Last updated: {new Date().toLocaleDateString("en-US")}</p>
         <p>
           YouHooAlert is built with privacy first. Location and alert data are shared only
           with contacts you choose during active emergencies. We do not sell personal data.

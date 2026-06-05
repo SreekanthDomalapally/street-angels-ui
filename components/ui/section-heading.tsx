@@ -24,13 +24,11 @@ export function SectionHeading({
       className={`max-w-2xl mb-12 ${alignClass}`}
     >
       {eyebrow && (
-        <p className="text-coral font-semibold text-sm uppercase tracking-widest mb-3">
+        <span className="inline-block rounded-lg bg-coral/15 border border-coral/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-coral-soft mb-4">
           {eyebrow}
-        </p>
+        </span>
       )}
-      <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-navy dark:text-white">
-        {title}
-      </h2>
+      <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">{title}</h2>
       {description && (
         <p className="mt-4 text-muted text-lg leading-relaxed">{description}</p>
       )}

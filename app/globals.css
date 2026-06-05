@@ -1,50 +1,79 @@
 @import "tailwindcss";
 
 :root {
-  --navy: #0b132b;
-  --navy-light: #1c2541;
-  --coral: #ff5a5f;
-  --coral-soft: #ff7b7f;
-  --white: #ffffff;
-  --gray-50: #f8f9fc;
-  --gray-100: #eef1f6;
-  --gray-600: #5c6478;
-  --gray-800: #2d3348;
+  --bg-deep: #071a14;
+  --bg: #0f2e24;
+  --bg-card: #153d32;
+  --bg-card-hover: #1a4d3e;
+  --navy: #0d3529;
+  --navy-light: #1e5c48;
+  --coral: #9ed67a;
+  --coral-soft: #b8f0a0;
+  --coral-glow: rgba(158, 214, 122, 0.45);
+  --sos: #e63946;
+  --sos-soft: #ff5a5f;
+  --sos-glow: rgba(230, 57, 70, 0.45);
+  --white: #d4ecd9;
+  --text: #d4ecd9;
+  --text-muted: #8fc9a8;
+  --border: rgba(212, 236, 217, 0.12);
+  --radius: 1rem;
 }
 
 @theme inline {
+  --color-bg-deep: var(--bg-deep);
+  --color-bg: var(--bg);
+  --color-bg-card: var(--bg-card);
   --color-navy: var(--navy);
   --color-navy-light: var(--navy-light);
   --color-coral: var(--coral);
   --color-coral-soft: var(--coral-soft);
-  --color-surface: var(--white);
-  --color-muted: var(--gray-600);
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-}
-
-.dark {
-  --white: #0b132b;
-  --gray-50: #121a32;
-  --gray-100: #1c2541;
-  --gray-600: #a8b0c4;
-  --gray-800: #e8ecf4;
+  --color-sos: var(--sos);
+  --color-sos-soft: var(--sos-soft);
+  --color-surface: var(--bg-card);
+  --color-muted: var(--text-muted);
+  --color-foreground: var(--text);
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
-  background: var(--gray-50);
-  color: var(--navy);
+  background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 35%, var(--bg-deep) 100%);
+  color: var(--text);
   font-family: var(--font-sans);
+  min-height: 100dvh;
 }
 
-.dark body {
-  background: var(--navy);
-  color: var(--gray-800);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--text);
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--coral) 35%, transparent);
+  background: color-mix(in srgb, var(--coral) 40%, transparent);
+}
+
+.glow-coral {
+  box-shadow: 0 0 40px var(--coral-glow), 0 0 80px color-mix(in srgb, var(--coral) 25%, transparent);
+}
+
+.glow-sos {
+  box-shadow: 0 0 40px var(--sos-glow), 0 0 80px color-mix(in srgb, var(--sos) 25%, transparent);
+}
+
+.card-dark {
+  background: color-mix(in srgb, var(--bg-card) 90%, transparent);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(8px);
 }

@@ -1,12 +1,40 @@
 export const SITE_URL = "https://youhooalert.com";
 
+export const TAGLINE = "HELPING PEOPLE HELP PEOPLE";
+
 export const NAV_LINKS = [
   { href: "#home", label: "Home" },
   { href: "#how-it-works", label: "How It Works" },
   { href: "#features", label: "Features" },
   { href: "#mission", label: "Mission" },
   { href: "#donate", label: "Donate" },
-  { href: "#download", label: "Download App" },
+] as const;
+
+export const HOW_IT_WORKS = [
+  {
+    step: 1,
+    title: "Press SOS",
+    description: "Hold the red button when you need help. Fast, discreet, and built for stress.",
+    icon: "sos",
+  },
+  {
+    step: 2,
+    title: "Alert sent",
+    description: "Trusted contacts are notified instantly with your live location on the map.",
+    icon: "alert",
+  },
+  {
+    step: 3,
+    title: "Help arrives",
+    description: "Family, friends, or nearby responders can coordinate and reach you quickly.",
+    icon: "help",
+  },
+] as const;
+
+export const HERO_CONTACTS = [
+  { name: "Priya", status: "has your location", tone: "coral" as const },
+  { name: "Arjun", status: "is on the way", tone: "green" as const },
+  { name: "Mom", status: "alert received", tone: "blue" as const },
 ] as const;
 
 export const FEATURES = [
@@ -35,7 +63,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: "Is my location private?",
-    a: "Your location is shared only during an active emergency with the contacts you choose. We design for privacy first.",
+    a: "Your location is shared only during an active alert with the contacts you choose. We design for privacy first.",
   },
   {
     q: "Can I create emergency groups?",

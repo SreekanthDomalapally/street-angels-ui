@@ -66,9 +66,16 @@ const paths: Record<string, React.ReactNode> = {
 };
 
 export function FeatureIcon({ name }: { name: string }) {
+  const isSos = name === "sos";
+  const box = isSos
+    ? "bg-sos/15 border-sos/30 text-sos-soft"
+    : "bg-coral/15 border-coral/25 text-coral";
+
   return (
-    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-coral/10 text-coral">
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
+    <div
+      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border ${box}`}
+    >
+      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
         {paths[name] ?? paths.sos}
       </svg>
     </div>

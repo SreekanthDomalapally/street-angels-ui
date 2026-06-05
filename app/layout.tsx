@@ -1,5 +1,5 @@
-import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { poppins } from "@/lib/fonts";
 import { siteMetadata } from "@/lib/metadata";
 import {
   mobileAppJsonLd,
@@ -7,12 +7,6 @@ import {
   webSiteJsonLd,
 } from "@/lib/structured-data";
 import "./globals.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
 
 export const metadata = siteMetadata;
 
@@ -24,8 +18,8 @@ export default function RootLayout({
   const jsonLd = [organizationJsonLd(), webSiteJsonLd(), mobileAppJsonLd()];
 
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} antialiased`}>
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <body className={`${poppins.variable} font-sans antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

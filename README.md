@@ -34,12 +34,12 @@ Set your production URL in `lib/site.ts` (`SITE_URL`) before deploying.
 
 ## Pages
 
-| Route | Description |
-|-------|-------------|
-| `/` | Landing (hero, features, mission, download, donate, FAQ) |
-| `/privacy` | Privacy policy |
-| `/terms` | Terms of use |
-| `/contact` | Contact |
+| Route      | Description                                              |
+| ---------- | -------------------------------------------------------- |
+| `/`        | Landing (hero, features, mission, download, donate, FAQ) |
+| `/privacy` | Privacy policy                                           |
+| `/terms`   | Terms of use                                             |
+| `/contact` | Contact                                                  |
 
 ## Mobile app
 

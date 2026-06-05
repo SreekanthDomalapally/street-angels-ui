@@ -8,12 +8,12 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <main className="min-h-screen bg-gray-50 dark:bg-navy pt-24 pb-16">
-      <article className="mx-auto max-w-3xl px-4 sm:px-6">
+    <main className="min-h-screen pt-24 pb-16 px-4 sm:px-6">
+      <article className="mx-auto max-w-3xl text-muted leading-relaxed space-y-4">
         <Link href="/" className="text-coral text-sm font-medium hover:underline">
           ← Back to home
         </Link>
-        <h1 className="text-3xl font-bold mt-6 text-navy dark:text-white">Terms of Service</h1>
+        <h1 className="text-3xl font-bold mt-6 text-foreground">Terms of Service</h1>
         <p className="mt-4 text-muted leading-relaxed">
           YouHooAlert is a community assistance tool, not a replacement for emergency services.
           Always call local emergency numbers when in immediate danger.

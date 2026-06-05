@@ -1,72 +1,46 @@
-# YouHoo Alert UI
+# YouHooAlert Website
 
-Next.js frontend for YouHoo Alert. Talks to the FastAPI backend at **https://api.youhooalert.com** (or a local `street-angels-api` instance) for auth, contacts, and emergencies.
+Static marketing site for **YouHooAlert** — a community-driven emergency assistance app. No API or backend integration; deploy as static HTML.
 
 ## Quick start
 
-**Terminal 1 — API** (from `street-angels-api`):
-
 ```bash
-cd c:/NextSree/street-angels-api
-.\.venv\Scripts\activate
-uvicorn app.main:app --reload --port 8000
-```
-
-**Terminal 2 — UI**:
-
-```bash
-cd c:/NextSree/street-angels-ui
 npm install
+npm run clean   # if dev server crashed or shows Turbopack file-lock errors (Windows)
 npm run dev
 ```
 
-Open http://localhost:3000
+On Windows, `npm run dev` uses **webpack** instead of Turbopack to avoid `.next` file-lock errors (os error 1224). Use `npm run dev:turbo` only if you need Turbopack.
 
-## Connect to the API
+Open [http://localhost:3000](http://localhost:3000).
 
-Create `.env.local`:
+## Build & deploy
 
-```env
-# Production
-API_URL=https://api.youhooalert.com
-
-# Or local FastAPI (see street-angels-api)
-# API_URL=http://localhost:8000
+```bash
+npm run build
 ```
 
-Next.js proxies browser requests from `/api/*` to the API server. Session cookies (`sa_session`) stay on the UI origin, so auth works without CORS issues in the browser.
+Static output is in `out/`. Host on Vercel, Netlify, S3, Cloudflare Pages, etc.
 
-| `API_URL` | Behavior |
-|-----------|----------|
-| `https://api.youhooalert.com` | Production API |
-| `http://localhost:8000` | Local FastAPI + Postgres |
-| Unset | Built-in mock API routes in `app/api/` (in-memory, dev only) |
+Set your production URL in `lib/site.ts` (`SITE_URL`) before deploying.
 
-## Deploy on Vercel
+## Stack
 
-1. Deploy **street-angels-api** as its own Vercel project (connect Neon → `DATABASE_URL`).
-2. Deploy **street-angels-ui** as a separate project.
-3. On the **UI** project → **Environment Variables**:
-
-   ```env
-   API_URL=https://api.youhooalert.com
-   ```
-
-4. On the **API** (`api.youhooalert.com`) → **Environment Variables**:
-
-   ```env
-   CORS_ORIGINS=https://your-ui-domain,http://localhost:3000
-   DATABASE_URL=<pooled Neon URL>
-   ```
-
-5. Redeploy both projects.
+- Next.js (App Router, static export)
+- TypeScript
+- Tailwind CSS v4
+- Framer Motion
+- Dark mode (`next-themes`)
 
 ## Pages
 
 | Route | Description |
 |-------|-------------|
-| `/welcome` | Sign in / register / demo |
-| `/home` | SOS hold button |
-| `/emergency` | Active emergency |
-| `/contacts` | Emergency contacts |
-| `/profile` | Profile + logout |
+| `/` | Landing (hero, features, mission, download, donate, FAQ) |
+| `/privacy` | Privacy policy |
+| `/terms` | Terms of use |
+| `/contact` | Contact |
+
+## Mobile app
+
+The Expo mobile app lives in a separate repository (`mobile-street-angels-ui`).

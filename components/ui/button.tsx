@@ -1,34 +1,46 @@
-import { forwardRef, type ButtonHTMLAttributes } from "react";
+import Link from "next/link";
 
-type Variant = "default" | "outline" | "ghost" | "destructive";
-type Size = "default" | "sm" | "icon";
+type Variant = "primary" | "secondary" | "outline" | "ghost";
 
-const variants: Record<Variant, string> = {
-  default: "bg-primary text-primary-foreground hover:opacity-90",
+const styles: Record<Variant, string> = {
+  primary:
+    "bg-coral text-white hover:bg-coral-soft shadow-lg shadow-coral/25",
+  secondary:
+    "bg-navy text-white hover:bg-navy-light dark:bg-white dark:text-navy dark:hover:bg-gray-100",
   outline:
-    "border border-border bg-transparent hover:bg-accent text-foreground",
-  ghost: "hover:bg-accent text-foreground",
-  destructive: "bg-destructive text-destructive-foreground hover:opacity-90",
+    "border-2 border-navy/20 text-navy hover:border-coral hover:text-coral dark:border-white/20 dark:text-gray-800",
+  ghost: "text-navy hover:text-coral dark:text-gray-800",
 };
 
-const sizes: Record<Size, string> = {
-  default: "h-10 px-4 py-2 text-sm",
-  sm: "h-8 px-3 text-xs rounded-md",
-  icon: "h-9 w-9 p-0",
-};
+export function Button({
+  href,
+  children,
+  variant = "primary",
+  className = "",
+  onClick,
+}: {
+  href?: string;
+  children: React.ReactNode;
+  variant?: Variant;
+  className?: string;
+  onClick?: () => void;
+}) {
+  const base =
+    "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-coral";
 
-export const Button = forwardRef<
-  HTMLButtonElement,
-  ButtonHTMLAttributes<HTMLButtonElement> & { variant?: Variant; size?: Size }
->(function Button(
-  { className = "", variant = "default", size = "default", ...props },
-  ref,
-) {
+  const classes = `${base} ${styles[variant]} ${className}`;
+
+  if (href) {
+    return (
+      <Link href={href} className={classes}>
+        {children}
+      </Link>
+    );
+  }
+
   return (
-    <button
-      ref={ref}
-      className={`inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-colors disabled:pointer-events-none disabled:opacity-50 ${variants[variant]} ${sizes[size]} ${className}`}
-      {...props}
-    />
+    <button type="button" onClick={onClick} className={classes}>
+      {children}
+    </button>
   );
-});
+}

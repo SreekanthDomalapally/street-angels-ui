@@ -1,133 +1,50 @@
 @import "tailwindcss";
 
 :root {
-  --background: 148 42% 7%;
-  --foreground: 138 52% 84%;
-  --card: 148 38% 10%;
-  --card-foreground: 138 52% 84%;
-  --card-border: 148 28% 18%;
-  --primary: 142 68% 58%;
-  --primary-foreground: 148 45% 8%;
-  --muted: 148 32% 13%;
-  --muted-foreground: 140 38% 62%;
-  --accent: 148 35% 12%;
-  --accent-foreground: 136 48% 78%;
-  --destructive: 0 72% 51%;
-  --destructive-foreground: 0 0% 100%;
-  --border: 148 26% 20%;
-  --input: 148 26% 20%;
-  --ring: 142 68% 58%;
+  --navy: #0b132b;
+  --navy-light: #1c2541;
+  --coral: #ff5a5f;
+  --coral-soft: #ff7b7f;
+  --white: #ffffff;
+  --gray-50: #f8f9fc;
+  --gray-100: #eef1f6;
+  --gray-600: #5c6478;
+  --gray-800: #2d3348;
 }
 
 @theme inline {
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
-  --color-accent: hsl(var(--accent));
-  --color-accent-foreground: hsl(var(--accent-foreground));
-  --color-destructive: hsl(var(--destructive));
-  --color-destructive-foreground: hsl(var(--destructive-foreground));
-  --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-ring: hsl(var(--ring));
+  --color-navy: var(--navy);
+  --color-navy-light: var(--navy-light);
+  --color-coral: var(--coral);
+  --color-coral-soft: var(--coral-soft);
+  --color-surface: var(--white);
+  --color-muted: var(--gray-600);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
-* {
-  border-color: hsl(var(--border));
+.dark {
+  --white: #0b132b;
+  --gray-50: #121a32;
+  --gray-100: #1c2541;
+  --gray-600: #a8b0c4;
+  --gray-800: #e8ecf4;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: hsl(var(--background));
-  color: hsl(var(--foreground));
+  background: var(--gray-50);
+  color: var(--navy);
   font-family: var(--font-sans);
 }
 
-@keyframes breatheRing {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.4;
-  }
-  50% {
-    transform: scale(1.04);
-    opacity: 0.7;
-  }
+.dark body {
+  background: var(--navy);
+  color: var(--gray-800);
 }
 
-@keyframes breatheRing2 {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.2;
-  }
-  50% {
-    transform: scale(1.06);
-    opacity: 0.45;
-  }
-}
-
-@keyframes idleGlow {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 hsl(var(--primary) / 0);
-  }
-  50% {
-    box-shadow: 0 0 32px 4px hsl(var(--primary) / 0.08);
-  }
-}
-
-@keyframes softPulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.02);
-  }
-}
-
-@keyframes dotBlink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.35;
-  }
-}
-
-@keyframes alertingDot {
-  0%,
-  80%,
-  100% {
-    transform: scale(0.6);
-    opacity: 0.4;
-  }
-  40% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+::selection {
+  background: color-mix(in srgb, var(--coral) 35%, transparent);
 }

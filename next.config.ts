@@ -1,19 +1,10 @@
 import type { NextConfig } from "next";
-
-const apiUrl = process.env.API_URL?.replace(/\/$/, "");
+import path from "path";
 
 const nextConfig: NextConfig = {
-  async rewrites() {
-    if (!apiUrl) return [];
-    return {
-      beforeFiles: [
-        {
-          source: "/api/:path*",
-          destination: `${apiUrl}/api/:path*`,
-        },
-      ],
-    };
-  },
+  output: "export",
+  images: { unoptimized: true },
+  outputFileTracingRoot: path.join(process.cwd()),
 };
 
 export default nextConfig;

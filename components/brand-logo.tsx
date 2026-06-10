@@ -41,7 +41,7 @@ export function BrandLogo({ compact = false, large = false }: BrandLogoProps) {
         alt="YouHooAlert"
         width={size.image}
         height={size.image}
-        className={`${size.imageClass} rounded-xl ring-2 ring-coral/40 group-hover:ring-coral/70 transition-shadow`}
+        className={`${size.imageClass} rounded-xl`}
         priority
       />
       <div className="leading-tight">

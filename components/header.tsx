@@ -41,8 +41,8 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button href="#download" className="!py-2.5 !px-5 text-sm">
-            Download App
+          <Button href="#early-access" className="!py-2.5 !px-5 text-sm">
+            Join Early Access
           </Button>
         </div>
 
@@ -75,8 +75,8 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <Button href="#download" className="w-full mt-2">
-            Download App
+          <Button href="#early-access" className="w-full mt-2">
+            Join Early Access
           </Button>
         </div>
       )}

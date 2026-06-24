@@ -46,8 +46,9 @@ export function HeroSection() {
             transition={{ delay: 0.1 }}
             className="mt-6 text-lg text-muted leading-relaxed max-w-xl"
           >
-            One tap sends SOS alerts and live location to trusted contacts. Community-driven,
-            free for everyone, and built for the moments that matter.
+            YouHooAlert connects you to a trusted response network — so the right people
+            receive your alert, see your live location, and coordinate real help when you
+            need it most.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -55,13 +56,13 @@ export function HeroSection() {
             transition={{ delay: 0.2 }}
             className="mt-8 flex flex-wrap gap-4"
           >
-            <Button href="#download">
+            <Button href="#early-access">
               <DownloadIcon />
-              Download App
+              Join Early Access
             </Button>
             <Button href="#how-it-works" variant="outline">
               <PlayIcon />
-              How It Works
+              See How It Works
             </Button>
           </motion.div>
         </div>

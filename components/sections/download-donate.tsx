@@ -3,12 +3,13 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { DONATION_AMOUNTS } from "@/lib/site";
+import { Button } from "@/components/ui/button";
 
 export function DownloadDonateSection() {
   const comingSoon = true;
 
   return (
-    <section className="py-20 sm:py-24" id="download">
+    <section className="py-20 sm:py-24" id="early-access">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
           <motion.div
@@ -28,26 +29,23 @@ export function DownloadDonateSection() {
               </div>
             </div>
             <div className="flex-1 text-center sm:text-left">
-              <h2 className="text-2xl font-bold text-foreground">Download YouHooAlert</h2>
-              <p className="mt-2 text-sm text-muted">Available on iOS & Android — coming soon</p>
+              <h2 className="text-2xl font-bold text-foreground">Join Early Access</h2>
+              <p className="mt-2 text-sm text-muted leading-relaxed">
+                Be among the first to build your trusted safety network. Help shape the
+                future of community safety — available soon on iOS &amp; Android.
+              </p>
+              <div className="mt-5">
+                <Button href="mailto:hello@youhooalert.com?subject=Early%20Access%20Request">
+                  Request Early Access
+                </Button>
+              </div>
               <div className="mt-5 flex flex-wrap gap-3 justify-center sm:justify-start">
                 <span className="inline-flex items-center rounded-lg bg-foreground/10 border border-foreground/15 px-4 py-2 text-xs font-semibold text-foreground/70">
-                  App Store
+                  App Store — Soon
                 </span>
                 <span className="inline-flex items-center rounded-lg bg-foreground/10 border border-foreground/15 px-4 py-2 text-xs font-semibold text-foreground/70">
-                  Google Play
+                  Google Play — Soon
                 </span>
-              </div>
-              <div className="mt-6 inline-block rounded-xl border border-dashed border-foreground/20 bg-foreground/5 p-4">
-                <div className="w-24 h-24 bg-white rounded-md grid grid-cols-5 grid-rows-5 gap-px p-1">
-                  {Array.from({ length: 25 }).map((_, i) => (
-                    <div
-                      key={i}
-                      className={`rounded-sm ${i % 4 === 0 ? "bg-navy" : "bg-white"}`}
-                    />
-                  ))}
-                </div>
-                <p className="text-[10px] text-muted mt-2">Scan to download</p>
               </div>
             </div>
           </motion.div>
@@ -63,10 +61,11 @@ export function DownloadDonateSection() {
             <div className="absolute -right-6 -bottom-6 text-8xl opacity-[0.06]" aria-hidden>
               ♥
             </div>
-            <h2 className="text-2xl font-bold text-foreground">Support the mission</h2>
+            <h2 className="text-2xl font-bold text-foreground">Keep safety accessible for everyone</h2>
             <p className="mt-3 text-sm text-muted leading-relaxed max-w-md">
-              YouHooAlert is free for everyone. Optional donations help maintain infrastructure
-              and keep the platform available for people in need.
+              YouHooAlert is free — and it stays free because of people like you. Optional
+              donations fund server infrastructure, reliable emergency alert delivery, and
+              community growth so safety is never behind a paywall.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               {DONATION_AMOUNTS.map((amount) => (

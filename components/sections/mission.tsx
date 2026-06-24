@@ -11,7 +11,7 @@ export function MissionSection() {
           <SectionHeading
             align="left"
             eyebrow="Our Mission"
-            title="Technology should help people help people."
+            title="Helping People Help People."
           />
           <motion.div
             initial={{ opacity: 0, x: 16 }}
@@ -20,11 +20,17 @@ export function MissionSection() {
             className="space-y-4 text-muted leading-relaxed"
           >
             <p>
-              YouHooAlert was created with a simple belief: when someone needs help, connecting
-              them to trusted people quickly can make all the difference.
+              Safety shouldn&apos;t be a luxury. YouHooAlert exists because we believe
+              everyone deserves a trusted network of people who can respond when life
+              gets hard — not an app that watches them 24/7.
             </p>
             <ul className="space-y-2">
-              {["No ads.", "No premium barriers.", "No hidden features."].map((line) => (
+              {[
+                "Free for everyone — no paywalls on safety.",
+                "No premium features locked behind subscriptions.",
+                "Community-supported through optional donations.",
+                "Built on trust, not surveillance.",
+              ].map((line) => (
                 <li key={line} className="flex items-center gap-3 text-foreground font-medium text-sm">
                   <span className="h-1.5 w-1.5 rounded-full bg-coral shrink-0" />
                   {line}
@@ -32,7 +38,8 @@ export function MissionSection() {
               ))}
             </ul>
             <p className="text-foreground font-semibold">
-              Just a platform designed to help people when they need it most.
+              A platform where communities look out for each other — and help arrives
+              because people care, not because an algorithm flagged a location.
             </p>
           </motion.div>
         </div>

@@ -9,7 +9,7 @@ export function organizationJsonLd() {
     logo: `${SITE_URL}/logo.png`,
     slogan: "Helping People Help People.",
     description:
-      "Community-driven emergency assistance app that helps people alert trusted contacts and share live location during emergencies.",
+      "Trusted response network and emergency coordination platform that helps people alert trusted contacts, coordinate real-world assistance, and share live location during emergencies.",
     sameAs: [
       "https://www.linkedin.com/company/youhooalert",
       "https://www.facebook.com/youhooalert",
@@ -25,7 +25,7 @@ export function webSiteJsonLd() {
     name: "YouHooAlert",
     url: SITE_URL,
     description:
-      "Emergency app for SOS alerts, live location sharing, and trusted community responses.",
+      "Trusted response network for safety groups, emergency coordination, and live location sharing with trusted contacts.",
     potentialAction: {
       "@type": "SearchAction",
       target: `${SITE_URL}/?q={search_term_string}`,
@@ -43,6 +43,6 @@ export function mobileAppJsonLd() {
     applicationCategory: "HealthApplication",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
     description:
-      "Personal safety and emergency alert app with live location sharing for trusted contacts.",
+      "Trusted response network and emergency coordination app with safety groups, smart routing, and live location sharing.",
   };
 }

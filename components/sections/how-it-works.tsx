@@ -6,10 +6,17 @@ import { SectionHeading } from "@/components/ui/section-heading";
 
 function StepIcon({ type }: { type: string }) {
   const cls = "h-8 w-8 text-coral";
-  if (type === "alert") {
+  if (type === "network") {
     return (
       <svg className={cls} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+    );
+  }
+  if (type === "groups") {
+    return (
+      <svg className={cls} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
       </svg>
     );
   }
@@ -33,8 +40,8 @@ export function HowItWorksSection() {
       <div className="container mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="How It Works"
-          title="Three simple steps"
-          description="From SOS to help on the way — designed to stay calm and clear under pressure."
+          title="Build your network. Get help when it counts."
+          description="YouHooAlert isn't about tracking — it's about trusted people responding when you need them."
         />
 
         <div className="relative grid md:grid-cols-3 gap-6 lg:gap-8">

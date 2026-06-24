@@ -11,7 +11,7 @@ export function FaqSection() {
   return (
     <section id="faq" className="py-20 sm:py-24 pb-28">
       <div className="container mx-auto max-w-3xl px-4 sm:px-6">
-        <SectionHeading eyebrow="FAQ" title="Common questions" />
+        <SectionHeading eyebrow="FAQ" title="Questions, answered honestly" />
         <div className="space-y-3">
           {FAQ_ITEMS.map((item, i) => {
             const isOpen = open === i;

@@ -68,7 +68,7 @@ export function HeroPhone() {
                 <div className="flex items-center gap-2 mb-2">
                   <span className="h-2 w-2 rounded-full bg-coral animate-pulse" />
                   <span className="text-[10px] font-medium text-coral-soft">
-                    Your location is live
+                    Responders coordinating
                   </span>
                 </div>
                 <div className="h-20 rounded-lg bg-gradient-to-br from-navy-light/80 to-navy relative overflow-hidden">

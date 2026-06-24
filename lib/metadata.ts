@@ -2,24 +2,31 @@ import type { Metadata } from "next";
 import { SITE_URL } from "./site";
 
 const keywords = [
-  "emergency app",
-  "SOS app",
-  "location sharing",
-  "personal safety app",
+  "trusted response network",
+  "emergency coordination app",
+  "safety groups app",
+  "trusted contacts safety",
+  "community safety app",
   "emergency alert app",
+  "personal safety app",
+  "SOS app",
+  "live location sharing",
   "family safety app",
-  "community safety",
+  "elderly safety app",
+  "student safety app",
+  "neighborhood safety",
   "YouHooAlert",
+  "helping people help people",
 ];
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "YouHooAlert — Emergency Help When Every Second Matters",
+    default: "YouHooAlert — Your Trusted Response Network for Real Emergencies",
     template: "%s | YouHooAlert",
   },
   description:
-    "YouHooAlert instantly notifies trusted contacts, shares your live location, and helps nearby people respond when you need assistance. Free, community-driven, privacy-first.",
+    "YouHooAlert is a trusted response network and emergency coordination platform. Build safety groups, route alerts to the right people, and coordinate real-world help — free for everyone.",
   keywords,
   authors: [{ name: "YouHooAlert" }],
   creator: "YouHooAlert",
@@ -30,14 +37,14 @@ export const siteMetadata: Metadata = {
     siteName: "YouHooAlert",
     title: "YouHooAlert — You Are Never Alone",
     description:
-      "Community-driven emergency assistance. One tap SOS, live location, trusted contacts.",
+      "A trusted response network that helps people coordinate real-world assistance. Safety groups, smart emergency routing, and live location — free for everyone.",
     images: [{ url: "/logo.png", width: 512, height: 512, alt: "YouHooAlert" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "YouHooAlert — Emergency Help One Tap Away",
+    title: "YouHooAlert — Trusted Response Network",
     description:
-      "Notify trusted contacts and share live location during emergencies. Free for everyone.",
+      "Build your trusted safety network. Coordinate real help with safety groups, emergency types, and live location sharing. Free for everyone.",
     images: ["/logo.png"],
   },
   robots: { index: true, follow: true },

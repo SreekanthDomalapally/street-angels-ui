@@ -24,10 +24,10 @@ export function Footer() {
             <Link href="/contact" className="hover:text-coral transition-colors">
               Contact Us
             </Link>
-            <Link href="#donate" className="hover:text-coral transition-colors">
+            <Link href="/#donate" className="hover:text-coral transition-colors">
               Donate
             </Link>
-            <Link href="#early-access" className="hover:text-coral transition-colors">
+            <Link href="/#early-access" className="hover:text-coral transition-colors">
               Early Access
             </Link>
           </nav>

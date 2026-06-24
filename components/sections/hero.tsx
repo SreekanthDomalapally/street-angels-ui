@@ -56,11 +56,11 @@ export function HeroSection() {
             transition={{ delay: 0.2 }}
             className="mt-8 flex flex-wrap gap-4"
           >
-            <Button href="#early-access">
+            <Button href="/#early-access">
               <DownloadIcon />
               Join Early Access
             </Button>
-            <Button href="#how-it-works" variant="outline">
+            <Button href="/#how-it-works" variant="outline">
               <PlayIcon />
               See How It Works
             </Button>

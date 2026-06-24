@@ -41,7 +41,7 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button href="#early-access" className="!py-2.5 !px-5 text-sm">
+          <Button href="/#early-access" className="!py-2.5 !px-5 text-sm">
             Join Early Access
           </Button>
         </div>
@@ -75,7 +75,7 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <Button href="#early-access" className="w-full mt-3" onClick={() => setOpen(false)}>
+          <Button href="/#early-access" className="w-full mt-3" onClick={() => setOpen(false)}>
             Join Early Access
           </Button>
         </div>

@@ -1,4 +1,5 @@
 import { ThemeProvider } from "@/components/theme-provider";
+import { JsonLd } from "@/components/json-ld";
 import { poppins } from "@/lib/fonts";
 import { siteMetadata } from "@/lib/metadata";
 import {
@@ -15,15 +16,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const jsonLd = [organizationJsonLd(), webSiteJsonLd(), mobileAppJsonLd()];
-
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body className={`${poppins.variable} font-sans antialiased`}>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <JsonLd data={[organizationJsonLd(), webSiteJsonLd(), mobileAppJsonLd()]} />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

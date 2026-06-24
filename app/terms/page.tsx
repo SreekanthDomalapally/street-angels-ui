@@ -1,14 +1,26 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/json-ld";
+import { createPageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd } from "@/lib/structured-data";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Terms of Service",
-  description: "YouHooAlert terms of service.",
-};
+  description:
+    "YouHooAlert terms of service. A community assistance and emergency coordination tool — not a replacement for emergency services. Read our usage terms.",
+  path: "/terms",
+  keywords: ["YouHooAlert terms", "emergency app terms of service"],
+});
 
 export default function TermsPage() {
   return (
-    <main className="min-h-screen pt-24 pb-16 px-4 sm:px-6">
+    <main id="main-content" className="min-h-screen pt-24 pb-16 px-4 sm:px-6">
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "" },
+          { name: "Terms of Service", path: "/terms" },
+        ])}
+      />
       <article className="mx-auto max-w-3xl text-muted leading-relaxed space-y-4">
         <Link href="/" className="text-coral text-sm font-medium hover:underline">
           ← Back to home

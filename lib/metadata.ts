@@ -15,7 +15,6 @@ export const SEO_KEYWORDS = [
   "elderly safety app",
   "student safety app",
   "neighborhood safety",
-  "Life360 alternative",
   "free safety app",
   "emergency responder coordination",
   "walking home alone safety",

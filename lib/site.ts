@@ -218,8 +218,8 @@ export const USE_CASES = [
 
 export const FAQ_ITEMS = [
   {
-    q: "How is YouHooAlert different from Life360?",
-    a: "Life360 is built for location tracking — knowing where family members are at all times. YouHooAlert is built for emergency coordination — connecting you to trusted people who can actually help when something goes wrong. We share your location only during active alerts, not 24/7.",
+    q: "How is YouHooAlert different from other safety apps?",
+    a: "Most safety apps are built for location tracking — knowing where someone is at all times. YouHooAlert is built for emergency coordination — connecting you to trusted people who can actually help when something goes wrong. We share your location only during active alerts, not 24/7.",
   },
   {
     q: "Who receives my alerts?",

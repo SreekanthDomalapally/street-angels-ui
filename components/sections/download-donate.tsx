@@ -63,9 +63,9 @@ export function DownloadDonateSection() {
             </div>
             <h2 className="text-2xl font-bold text-foreground">Keep safety accessible for everyone</h2>
             <p className="mt-3 text-sm text-muted leading-relaxed max-w-md">
-              YouHooAlert is free — and it stays free because of people like you. Optional
-              donations fund server infrastructure, reliable emergency alert delivery, and
-              community growth so safety is never behind a paywall.
+              YouHooAlert is free — and we intend to keep it that way. But every new user and
+              every alert sent adds to server, messaging, and infrastructure costs. Optional
+              donations help us scale responsibly without putting safety behind a paywall.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               {DONATION_AMOUNTS.map((amount) => (

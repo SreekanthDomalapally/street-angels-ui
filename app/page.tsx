@@ -1,4 +1,5 @@
 import { Header } from "@/components/header";
+import { DonateBanner } from "@/components/donate-banner";
 import { Footer } from "@/components/footer";
 import { poppins } from "@/lib/fonts";
 import { HeroSection } from "@/components/sections/hero";
@@ -17,6 +18,7 @@ import { FaqSection } from "@/components/sections/faq";
 export default function HomePage() {
   return (
     <div className={`flex flex-col min-h-screen ${poppins.variable}`}>
+      <DonateBanner />
       <Header />
       <main className="flex-1">
         <HeroSection />

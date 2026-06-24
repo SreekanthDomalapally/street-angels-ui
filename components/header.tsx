@@ -25,15 +25,15 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 md:px-6">
-        <BrandLogo large />
+      <div className="container mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-3 md:px-6">
+        <BrandLogo compact />
 
-        <nav className="hidden lg:flex items-center gap-1" aria-label="Main">
+        <nav className="hidden lg:flex items-center gap-6" aria-label="Main">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-foreground/85 hover:text-foreground hover:bg-foreground/5 transition-colors"
+              className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
             >
               {link.label}
             </Link>
@@ -64,18 +64,18 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-foreground/10 bg-bg-card px-4 py-4 space-y-2">
+        <div className="lg:hidden border-t border-foreground/10 bg-bg-card px-4 py-4 space-y-1">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="block rounded-lg px-3 py-2 text-sm font-medium text-foreground/90 hover:bg-foreground/5"
+              className="block rounded-lg px-3 py-2.5 text-sm font-medium text-foreground/90 hover:bg-foreground/5"
               onClick={() => setOpen(false)}
             >
               {link.label}
             </Link>
           ))}
-          <Button href="#early-access" className="w-full mt-2">
+          <Button href="#early-access" className="w-full mt-3" onClick={() => setOpen(false)}>
             Join Early Access
           </Button>
         </div>

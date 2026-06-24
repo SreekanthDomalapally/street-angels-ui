@@ -3,12 +3,11 @@ export const SITE_URL = "https://youhooalert.com";
 export const TAGLINE = "HELPING PEOPLE HELP PEOPLE";
 
 export const NAV_LINKS = [
-  { href: "#home", label: "Home" },
   { href: "#how-it-works", label: "How It Works" },
   { href: "#features", label: "Features" },
   { href: "#use-cases", label: "Use Cases" },
   { href: "#mission", label: "Mission" },
-  { href: "#early-access", label: "Early Access" },
+  { href: "#donate", label: "Donate" },
 ] as const;
 
 export const HOW_IT_WORKS = [

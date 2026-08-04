@@ -75,7 +75,7 @@ export function DownloadDonateSection() {
                   disabled={comingSoon}
                   className="min-w-[3.5rem] rounded-xl border border-foreground/15 bg-foreground/5 px-5 py-2.5 font-bold text-foreground hover:border-coral hover:text-coral transition-colors disabled:opacity-60"
                 >
-                  ${amount}
+                  ₹{amount}
                 </button>
               ))}
               <button

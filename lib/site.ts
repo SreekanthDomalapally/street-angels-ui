@@ -251,4 +251,4 @@ export const FAQ_ITEMS = [
   },
 ] as const;
 
-export const DONATION_AMOUNTS = [2, 5, 10] as const;
+export const DONATION_AMOUNTS = [50, 100, 500] as const;
